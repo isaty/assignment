@@ -1,0 +1,13 @@
+<div class="_title">
+    <span class="_header">Do you wish to delete this compound</span>
+  </div>
+  <div class="_center">
+    <div class="_content">
+      {{ data.CompoundName }}
+    </div>
+  </div>
+  <div mat-dialog-actions class="buttons">
+    <button mat-button color="primary" mat-dialog-close>Cancel</button>
+    <button mat-button color="warn" (click)="deleteCompound()" mat-dialog-close>OK</button>
+  </div>
+  

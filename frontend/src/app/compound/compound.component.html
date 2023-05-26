@@ -1,0 +1,18 @@
+<div class="cm-container">
+    <div class="cm-box">
+      <div class="cm-flexRow">
+        <div class="cm-name">
+          <h1>
+            {{ compound && compound.CompoundName ? compound.CompoundName : "" }}
+          </h1>
+        </div>
+        <div class="cm-image">
+            <img [src]="compound && compound.strImageSource ? compound.strImageSource : ''" />
+          </div>
+        <div class="cm-description">
+          {{ compound && compound.CompoundDescription ? compound.CompoundDescription : "" }}
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,30 @@
+<h1 mat-dialog-title>Create Compound</h1>
+<div mat-dialog-content class="_content">
+  <form [formGroup]="createForm" style="display: grid">
+    <mat-form-field appearance="outline">
+      <mat-label>Compound Name</mat-label>
+      <input formControlName="CompoundName" matInput placeholder="Compound Name" />
+      <mat-error *ngIf="createForm.get('CompoundName')?.errors?.['required']">
+        Name is Required</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Image Source</mat-label>
+        <input formControlName="strImageSource" matInput placeholder="Image Source" />
+        <mat-error *ngIf="createForm.get('strImageSource')?.errors?.['required']">
+          Source is Required</mat-error>
+      </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Compound description</mat-label>
+      <textarea style="height: 175px" formControlName="CompoundDescription" matInput placeholder="Compound Description"></textarea>
+      <mat-error *ngIf="createForm.get('CompoundDescription')?.errors?.['required']">
+        Description is Required
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions class="buttons">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button color="primary" [disabled]="!createForm.valid" (click)="create()">
+    Create
+  </button>
+</div>

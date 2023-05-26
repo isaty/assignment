@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>Update Compound</h1>
+<div mat-dialog-content class="_content">
+  <form [formGroup]="updateForm" style="display: grid">
+    <mat-form-field appearance="outline">
+      <mat-label>Compound Name</mat-label>
+      <input formControlName="CompoundName" matInput placeholder="Compound Name" />
+      <mat-error *ngIf="updateForm.get('CompoundName')?.errors?.['required']">
+        Name is Required</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Compound description</mat-label>
+      <textarea style="height: 175px" formControlName="CompoundDescription" matInput placeholder="Compound Description"></textarea>
+      <mat-error *ngIf="updateForm.get('CompoundDescription')?.errors?.['required']">
+        Description is Required
+    </mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions class="buttons">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button color="primary" [disabled]="!updateForm.valid" (click)="updateCompound()">
+    Update
+  </button>
+</div>
